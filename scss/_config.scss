@@ -1,0 +1,33 @@
+// Variables
+$primary-color: #444;
+$secondary-color: #eece1a;
+$show-home-image: true;
+$home-image: url(../img/fabian-grohs-597395-unsplash.jpg);
+$background-opacity: 0.9;
+
+// like a function
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
+
+@mixin background {
+    @if $show-home-image {
+        &#bg-img {
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
+            
+            &:after { // To add dull effect mixed with background
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1; // To bring up the Home Page text
+                background: rgba($primary-color, $background-opacity); // Making the background image dully mixed with primary color
+            }
+        }
+        
+    }
+}
