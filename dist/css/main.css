@@ -236,7 +236,7 @@ main {
   color: #fff;
   height: 60px; }
 
-@media screen and (max-width: 1171px) {
+@media screen and (max-width: 2000px) {
   .projects {
     grid-template-columns: repeat(4, 1fr); } }
 
